@@ -91,7 +91,7 @@ Feel free to check out [T-chai dedicated website](https://cloud-object-storage-c
 
 - [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio) - Backend
 - [Watson Text to Speech](https://www.ibm.com/products/text-to-speech) - "Read aloud" feature
-- [IBM Granite 7B instruct](https://huggingface.co/ibm-granite/granite-7b-instruct) - local inference with model hosted on Hugging Face
+- [IBM Granite 7B instruct](https://huggingface.co/ibm-granite/granite-7b-instruct) - Local inference with model hosted on Hugging Face
 
 ### Solution architecture
 
