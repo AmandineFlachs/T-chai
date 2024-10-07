@@ -1,14 +1,6 @@
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue)](https://developer.ibm.com/callforcode/solutions/projects/get-started/)
 
-_INSTRUCTIONS: This GitHub repository serves as a template and example you can use to create a well documented README for your project for the [2024 Call for Code Global Challenge](https://developer.ibm.com/callforcode/global-challenge/)._
-
-Your required deliverables and project descriptions should be officially submitted to your My Team > Submissions section of the [Call for Code Global Challenge web site](https://compete.callforcode.skillsnetwork.site/competitions/2024-call-for-code-global-challenge), but you can also optionally include them here for completeness, as it is good practice to clearly document your project in your README file. Replace the examples seen here with your own deliverable links.
-
-Use the **Use this template** button to create a new version of this repository and start entering content for your own Call for Code submission project. Make sure you have [registered for the 2024 Call for Code Global Challenge](https://www.ibm.com/account/reg/signup?formid=urx-52643) to access resources and full project submission instructions. Remove any "INSTRUCTIONS" sections when you are ready to submit your project.
-
-_New to Git and GitHub? This free online course will get you up to speed quickly: [Getting Started with Git and GitHub](https://www.coursera.org/learn/getting-started-with-git-and-github)_.
-
-# Replace this heading with your team/submission name
+# T-chai
 
 - [Project summary](#project-summary)
   - [The issue we are hoping to solve](#the-issue-we-are-hoping-to-solve)
@@ -19,138 +11,178 @@ _New to Git and GitHub? This free online course will get you up to speed quickly
   - [Other IBM technology used](#other-ibm-technology-used)
   - [Solution architecture](#solution-architecture)
 - [Presentation materials](#presentation-materials)
-  - [Solution demo video](#solution-demo-video)
+  - [Video](#video)
   - [Project development roadmap](#project-development-roadmap)
 - [Additional details](#additional-details)
-  - [How to run the project](#how-to-run-the-project)
-  - [Live demo](#live-demo)
-- [About this template](#about-this-template)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
+  - [Prerequisites](#how-to-run-the-project)
+  - [Run T-chai UI](#run-t-chai-ui)
+  - [Local inference](#local-inference)
+  - [Access from other machines and smartphones](#access-from-other-machines-and-smartphones)
+- [About](#about)
   - [Authors](#authors)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
-
-_INSTRUCTIONS: Below are the suggested sections to include in your README file to make sure your project is well documented. You can remove this instruction text._
 
 ## Project summary
 
 ### The issue we are hoping to solve
 
-REPLACE THIS SENTENCE with a short description, 2-3 sentences in length, of the specific sustainability problem your solution is meant to address.
+Access to education remains a challenge in many regions of the world. There is often a shortage of teachers and tutors, particularly in isolated areas and for specialized subjects requiring expert knowledge. Many families face challenges and need the right tools to help their children succeed in their learning journey.
 
 ### How our technology solution can help
 
-REPLACE THIS SENTENCE with a short description of your team's solution, in about 10 words.
+T-chai is an AI homework tutor based on IBM watsonx.ai services and the IBM Granite Large Language Model.
 
 ### Our idea
 
-INSTRUCTIONS: Replace this paragraph with a longer description of your solution. In about 500 words, describe your solution in more detail. Include the real-world problem you identified, describe the technological solution you have created, and explain how it’s an improvement over existing solutions. You can supply additional documentation in this source code repository that you link to as well.
+Education remains a global challenge, with access to quality learning opportunities varying widely across regions. Many areas, particularly remote and underserved communities, face a critical shortage of qualified teachers and tutors. This scarcity is especially pronounced in specialized subjects that require expert knowledge.
 
-More detail is available in our [description document](./docs/DESCRIPTION.md).
+The impact of this educational gap extends beyond the classroom. According to Families Learning, 60% of parents struggle to assist their children with homework, highlighting a widespread need for additional academic support. Research shows that students who receive personalized support outperform 98% of those who do not. However, the high cost of tutoring services—averaging between $40 and $80 per hour in the USA—makes this valuable resource inaccessible to many families, particularly those with lower incomes.
+
+In developing countries, the educational challenges are further compounded by factors such as gender disparities and geographic constraints, making the need for affordable, accessible tutoring solutions even more pressing.
+
+T-chai is an AI homework tutor based on Watsonx.ai and the IBM Granite Large Language Model (LLM). From elementary to university, T-chai is here to guide, explain, and inspire all students to explore topics beyond the textbook using natural language.
+
+One of T-chai's key features is its ability to adapt its responses based on the user's profile. For instance, when addressing a 5-year-old child, T-chai provides simple, concise answers. However, for a 15-year-old student asking the same question, the AI adjusts its language, incorporating more advanced scientific terms and concepts. This flexibility ensures that learners of all ages and levels can benefit from the platform.
+
+Our prototype also incorporates two additional features to enhance T-chai’s effectiveness and accessibility:
+
+- Retrieval Augmented Generation (RAG): This feature allows the AI model to access information from Wikipedia, expanding its knowledge and providing up-to-date information to users.
+- Text To Speech (TTS): Powered by IBM Watson, this accessibility feature enables students to listen to answers, which is particularly helpful for learning pronunciation.
+
+T-chai's versatility extends to parents as well. It can assist them in understanding their child's curriculum, finding age-appropriate educational resources, creating practice tests, and even discussing effective memorization techniques. This dual-purpose design makes T-chai a comprehensive tool for supporting education within the family.
+
+While we recommend adult supervision for children under 10, T-chai incorporates several safety measures to protect young users. These include the use of an AI risk atlas, IBM watsonx.guardrail, and careful prompt engineering to ensure appropriate and safe interactions.
+
+T-chai is based on IBM Granite and watsonx.ai. The UI relies on Streamlit and connects to various IBM services. watsonx.ai foundation models allow to query IBM Granite models remotely. We also support local inference using Granite models hosted on Hugging Face for unreliable internet connections. We used watsonx.ai Prompt Lab to experiment with prompts and create templates for our different user profiles, students or parents. We also support Watson Text to Speech.
+
+In the future, we also want to develop lessons on specific topics for each age group, a dashboard for students and parents to track their progress, as well as some gamification functionalities to encourage students to discuss what they learned in school during the day and reinforce their learning experience.
+
+Accessibility is a key consideration in T-chai's design. The platform is optimized for both computers and smartphones, recognizing that not all families have access to home computers. We also plan to develop a standalone app and forge partnerships with schools and libraries to extend T-chai's reach to students in remote locations who may lack personal devices or reliable internet access.
+
+Feel free to check out [T-chai dedicated website](https://cloud-object-storage-cos-static-web-hosting-64k.s3-web.eu-gb.cloud-object-storage.appdomain.cloud).
+
+![t-chai_website](/home/alex/Work/c4c2024/assets/t-chai_website.png)
 
 ## Technology implementation
 
 ### IBM watsonx product(s) used
 
-_INSTRUCTIONS: Included here is a list of IBM watsonx products. Remove any products you did not use. Leave only those included in your solution code. In your official submission on the Call for Code Global Challenge web site, you are required to provide details on where and how you used each IBM watsonx product so judges can review your implementation. Remove these instructions._
-
 **Featured watsonx products**
 
-- [watsonx.ai](https://www.ibm.com/products/watsonx-ai) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
+- [watsonx.ai](https://www.ibm.com/products/watsonx-ai)
+  - [Foundations Models](https://www.ibm.com/products/watsonx-ai/foundation-models) - [IBM Granite 13B Chat v2](https://www.ibm.com/docs/en/watsonx/w-and-w/1.1.x?topic=by-granite-13b-chat-v2-model-card)
 
-- [watsonx.governance](https://www.ibm.com/products/watsonx-governance) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
+  - [Prompt Lab](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/fm-prompt-lab.html?context=wx) - Prompt Templates
 
-- [watsonx Assistant](https://cloud.ibm.com/catalog/services/watsonx-assistant) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
+  - [AI Guardrail](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/fm-hap.html?context=wx) - Safety
+
+- [watsonx](https://cloud.ibm.com/catalog/services/watsonx)
+  - [AI risk atlas](https://dataplatform.cloud.ibm.com/docs/content/wsj/ai-risk-atlas/ai-risk-atlas.html?context=wx) - Safety
+
 
 ### Other IBM technology used
 
-INSTRUCTIONS: List any other IBM technology or IBM AI services used in your solution and describe how each component was used. If you can provide details on where these were used in your code, that would help the judges review your submission.
+**Additional IBM AI services**
 
-**Additional IBM AI services (Remove any that you did not use)**
+- [IBM Cloud storage services](https://www.ibm.com/cloud/storage) - Static website hosting
+- [IBM Cloud](https://www.ibm.com/cloud) - Backend
+- [Watson Machine Learning](https://cloud.ibm.com/catalog/services/watson-machine-learning) - Backend
 
-- [Watson Machine Learning](https://cloud.ibm.com/catalog/services/watson-machine-learning) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Language Translator](https://cloud.ibm.com/catalog/services/language-translator) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
+- [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio) - Backend
+- [Watson Text to Speech](https://www.ibm.com/products/text-to-speech) - "Read aloud" feature
+- [IBM Granite 7B instruct](https://huggingface.co/ibm-granite/granite-7b-instruct) - local inference with model hosted on Hugging Face
 
 ### Solution architecture
 
-REPLACE THIS EXAMPLE WITH YOUR OWN, OR REMOVE THIS EXAMPLE
+![Architecture](assets/t-chai_architecture.png)
 
-Diagram and step-by-step description of the flow of our solution:
-
-![Video transcription/translaftion app](https://developer.ibm.com/developer/tutorials/cfc-starter-kit-speech-to-text-app-example/images/cfc-covid19-remote-education-diagram-2.png)
-
-1. The user navigates to the site and uploads a video file.
-2. Watson Speech to Text processes the audio and extracts the text.
-3. Watson Translation (optionally) can translate the text to the desired language.
-4. The app stores the translated text as a document within Object Storage.
+1. Fill user profile (student/parent, age)
+2. Select options (RAG with Wikipedia)
+3. Interact with model via natural language
+4. Optionally, use Text To Speech ("Read aloud" button) to learn pronunciation
+5. Click "Start new conversation" button to change topic
 
 ## Presentation materials
 
-_INSTRUCTIONS: The following deliverables should be officially posted to your My Team > Submissions section of the [Call for Code Global Challenge resources site](https://cfc-prod.skillsnetwork.site/), but you can also include them here for completeness. Replace the examples seen here with your own deliverable links._
+### Video
 
-### Solution demo video
-
-[![Watch the video](https://raw.githubusercontent.com/Liquid-Prep/Liquid-Prep/main/images/readme/IBM-interview-video-image.png)](https://youtu.be/vOgCOoy_Bx0)
+[![Video](./assets/t-chai_video_preview.png)](https://youtu.be/3v78iNSMaRg)
 
 ### Project development roadmap
 
-The project currently does the following things.
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-In the future we plan to...
-
 See below for our proposed schedule on next steps after Call for Code 2024 submission.
 
-![Roadmap](./images/roadmap.jpg)
+![Roadmap](./assets/t-chai_roadmap.png)
 
 ## Additional details
 
-_INSTRUCTIONS: The following deliverables are suggested, but **optional**. Additional details like this can help the judges better review your solution. Remove any sections you are not using._
+### Prerequisites
 
-### How to run the project
+- The project relies on watsonx.ai (to access foundation models, in our case IBM granite-13b-chat-v2, as well as T-chai prompt templates) and Watson Text To Speech. Therefore, you need valid WATSONXAI_PROJECT_ID, WATSONXAI_API_KEY and WATSON_IAM_AUTH.
 
-INSTRUCTIONS: In this section you add the instructions to run your project on your local machine for development and testing purposes. You can also add instructions on how to deploy the project in production.
+- Create a virtual environment, activate it and install python dependencies:
 
-### Live demo
+```bash
+python3 -m venv venv_tchai
+source venv_tchai/bin/activate
+pip install -r requirements.txt
+```
 
-You can find a running system to test at...
+### Run T-chai UI
 
-See our [description document](./docs/DESCRIPTION.md) for log in credentials.
+To run T-chai UI with watsonx.ai remote inference (which is the default inference mode):
 
----
+```bash
+streamlit run streamlit.py -- --watsonxai_project_id=<WATSONXAI_PROJECT_ID> --watsonxai_api_key=<WATSONXAI_API_KEY> --watson_iam_auth=<WATSON_IAM_AUTH>
+```
 
-_INSTRUCTIONS: You can remove the below section from your specific project README._
+This will open a new browser tab, which will look like this:
 
-## About this template
+![T-chai_UI](/home/alex/Work/c4c2024/assets/t-chai_ui.png)
 
-### Contributing
+### Local inference
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+For debugging purposes or in case of unreliable internet connection, it can be preferable to run the model locally. We recommend the use of [vllm](https://github.com/vllm-project/vllm) as it is easy to use, fast and compatible with a large range of models.
 
-### Versioning
+- Install vllm:
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+```bash
+python3 -m venv venv_vllm
+source venv_vllm/bin/activate
+pip install vllm
+```
+
+- Run vllm with the [IBM Granite 7B instruct](https://huggingface.co/ibm-granite/granite-7b-instruct) model hosted on Hugging Face.
+
+```bash
+vllm serve ibm-granite/granite-7b-instruct
+```
+
+Note that if the model is not present on your local system, the first time you run the command vllm will download the model which may take some time as the model parameters take 14GB of space.
+
+- Run T-chai UI in local inference mode:
+
+```bash
+streamlit run streamlit.py -- --use_local_inference --watsonxai_project_id=<WATSONXAI_PROJECT_ID> --watsonxai_api_key=<WATSONXAI_API_KEY> --watson_iam_auth=<WATSON_IAM_AUTH>
+```
+
+### Access from other machines and smartphones
+
+When you launch the T-chai UI on your computer, streamlit prints a Network URL with an IP and a port that can be used to access T-chai from different machines on the same network, including smartphones.
+
+<img src="assets/streamlit_terminal.png" width="400"/>
+
+For example, this is T-chai on Android, with inference running on a different computer.
+
+<img src="assets/t-chai_android.png" width="300"/>
+
+## About
 
 ### Authors
 
-<a href="https://github.com/Call-for-Code/Project-Sample/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=Call-for-Code/Project-Sample" />
-</a>
-
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
+- Amandine Flachs
+- Alexandre Borghi
 
 ### License
 
