@@ -62,7 +62,7 @@ Accessibility is a key consideration in T-chai's design. The platform is optimiz
 
 Feel free to check out [T-chai dedicated website](https://cloud-object-storage-cos-static-web-hosting-64k.s3-web.eu-gb.cloud-object-storage.appdomain.cloud).
 
-![t-chai_website](/home/alex/Work/c4c2024/assets/t-chai_website.png)
+![t-chai_website](assets/t-chai_website.png)
 
 ## Technology implementation
 
@@ -139,7 +139,7 @@ streamlit run streamlit.py -- --watsonxai_project_id=<WATSONXAI_PROJECT_ID> --wa
 
 This will open a new browser tab, which will look like this:
 
-![T-chai_UI](/home/alex/Work/c4c2024/assets/t-chai_ui.png)
+![T-chai_UI](assets/t-chai_ui.png)
 
 ### Local inference
 
